@@ -1,17 +1,31 @@
 package com.yyskt.filter;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import org.springframework.stereotype.Component;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.netflix.zuul.ZuulFilter;
+import com.netflix.zuul.exception.ZuulException;
 
-public class SessionFilter {
+@Component
+public class SessionFilter extends ZuulFilter {
 	
-	@Autowired
-	HttpServletRequest request;
-	public void main(String[] args) {
-		
-		HttpSession session = request.getSession();
-		session.setAttribute("AA", "BB");
+	@Override
+	public boolean shouldFilter() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+	@Override
+	public Object run() throws ZuulException {
+		System.out.println(1);
+		return null;
+	}
+	@Override
+	public String filterType() {
+		// TODO Auto-generated method stub
+		return "pre";
+	}
+	@Override
+	public int filterOrder() {
+		// TODO Auto-generated method stub
+		return 1;
 	}
 }
