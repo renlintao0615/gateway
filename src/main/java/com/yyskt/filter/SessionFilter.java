@@ -15,7 +15,6 @@ public class SessionFilter extends ZuulFilter {
 	}
 	@Override
 	public Object run() throws ZuulException {
-		System.out.println(1);
 		return null;
 	}
 	@Override
