@@ -35,7 +35,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.gateway.GatewayApplication</mainClass>
+                    <mainClass>com.yyskt.GatewayApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>
@@ -48,5 +48,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

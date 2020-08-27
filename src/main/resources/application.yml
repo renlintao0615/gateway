@@ -1,5 +1,10 @@
 server:
-  port: 8001
+  port: 443
+  ssl:
+    key-store: classpath:www.yueyangskt.com.jks
+    key-password: okpm3a8y2e
+    key-store-type: JKS
+#    key-alias: 1
 
 spring: 
   application: 
@@ -10,7 +15,7 @@ spring:
     password: abc1176478896
     driver-class-name: com.mysql.cj.jdbc.Driver
   redis:
-    host: 192.168.1.2
+    host: localhost
     port: 6379
     password: 123456
     timeout: 3000
@@ -20,6 +25,13 @@ spring:
         max-idle: 20     # 连接池中的最大空闲连接
         min-idle: 8     # 连接池中的最小空闲连接
         max-wait: 10000      # 连接池最大阻塞等待时间（使用负值表示没有限制）
+
+#zuul:
+#  servlet-path: /
+#  routes:
+#    first:
+#      path: /zuul
+#      url: http://www.yueyangskt.com/
 
 ribbon:
   OkToRetryOnAllOperations: false #对所有操作请求都进行重试,默认false
@@ -41,5 +53,5 @@ hystrix:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8000/eureka/
+      defaultZone: http://localhost:8001/eureka/
 
